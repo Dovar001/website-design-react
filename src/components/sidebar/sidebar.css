@@ -55,10 +55,31 @@
     width: 250px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .sidebar-icon {
-font-size: 16px;
+font-size: 30px;
+margin-right: 10px;
 margin-top: 10px;
 cursor: pointer;
+}
+
+.sidebar-icon:hover{
+    color:#F1C40F;
+}
+
+.sidebar-social > a {
+    color: black;
+   
+}
+.my-img{
+    width: 80%;
+    border-radius: 30%;
+    
+}
+.about-me-p{
+    color:#F1C40F ;
+    background-color: whitesmoke;
+    border-radius: 30px;
 }

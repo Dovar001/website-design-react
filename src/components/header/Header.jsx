@@ -1,15 +1,16 @@
 import './header.css'
+import mainPhoto from '../../images/main.jpg'
 
-function Header() {
+export default function Header() {
     return (
         <div className="header">
             <div className="header-titles">
-                <span className="header-title-sm">React & Node</span>
-                <span className="header-title-lg">Blog</span>
+                <span className="header-title-sm"> by Dovar001 <strong>:)</strong> </span>
+                <span className="header-title-lg title-big">Dovar </span>
             </div>
-            <img className="header-img" src="https://vjoy.cc/wp-content/uploads/2019/07/1-5.jpg" alt="" />
+            <img className="header-img" src={mainPhoto} alt="" />
         </div>
     )
 }
 
-export default Header
+

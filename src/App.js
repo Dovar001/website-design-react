@@ -13,9 +13,11 @@ import {
   Link
 } from "react-router-dom";
 import Posts from "./components/posts/Posts";
+import { useContext } from "react";
+import { Context } from "./context/Context";
 
-function App() {
-  const user = false;
+export default function App() {
+  const {user} = useContext(Context);
   return (
     <Router>
          <TopBar />
@@ -27,7 +29,7 @@ function App() {
           <Route path="/login">{ user? <Home />:<Login />}</Route>
           <Route path="/write">{ user? <Write />:<Register />}</Route>
           <Route path="/settings">{ user? <Settings />:<Register />} </Route>
-          <Route path="/post/:postId">
+          <Route path="/post/:postId" >
             <Single />
           </Route>
         </Switch>
@@ -37,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+

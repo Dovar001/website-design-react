@@ -1,15 +1,23 @@
 import './topbar.css'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { Context } from '../../context/Context';
+import { Logout } from '../../context/Actions';
+import logo from '../../images/logo.png'
 
-function TopBar() {
-    const user =false
+
+export default function TopBar() {
+    const {user,dispatch} = useContext(Context);
+    const PF = "http://localhost:5000/images/"
+
+    const handleLogout = () => {
+dispatch({type:"LOGOUT"});
+    };
     return (
         <div className="top">
            <div className="top-left">
-           <i class="top-icon fab fa-facebook-square"></i>
-           <i class="top-icon fab fa-instagram"></i>
-           <i class="top-icon fab fa-twitter"></i>
-           <i class="top-icon fab fa-telegram"></i>
+               <img className="dovar-logo"  src={logo} alt="" />
+          
                </div> 
            <div className="top-center">
                <li className="top-list-item">
@@ -24,14 +32,16 @@ function TopBar() {
                <li className="top-list-item">
                <Link className="link" to="/write" >WRITE</Link>
                </li>
-               <li className="top-list-item">
+               <li className="top-list-item" onClick={handleLogout}>
                    {user && "LOGOUT"}
                </li>
            </div>
            <div className="top-right">
                {
                    user ? (
-                    <img className="top-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgziImhddrjDfzSKLHkUKY0lI1FzuKrHvvnA&usqp=CAU" alt="Dovar" />
+                       <Link to="/settings">
+                    <img className="top-img" src={PF+user.profilePic} alt="" />
+                    </Link>
                    ):(
                        <ul className="top-list">
                            <li className="top-list-item"><Link className="link" to="/login" >LOGIN</Link></li>
@@ -46,4 +56,4 @@ function TopBar() {
     );
 }
 
-export default TopBar
+

@@ -30,6 +30,7 @@
     width:40px;
     border-radius:50%;
     object-fit: cover;
+    cursor: pointer;
 
 }
 
@@ -42,18 +43,29 @@
 .top-list-item {
     margin-right: 20px;
     font-size: 18px;
-    font-weight: 300;
+  
+    font-weight: 400;
+    color: #F1C40F;
     cursor: pointer;
 }
 
 .top-search-icon {
 
      font-size: 18px;
-     color: #444;
+     color: #F1C40F;
      cursor: pointer;
      margin-left: 15px;
 }
 .top-list{
     list-style: none;
     display: flex;
+}
+
+.dovar-logo {
+    height:60px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+      
+
 }

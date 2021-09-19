@@ -9,6 +9,9 @@
     font-family: 'Lora', serif;
     color: #444;
 }
+.title-big{
+    color: #F1C40F;
+}
 
 .header-title-sm {
     position:absolute;
